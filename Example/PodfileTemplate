@@ -1,0 +1,45 @@
+source 'git@git.2dfire.net:ios/cocoapods-spec.git'
+platform :ios, '8.0'
+
+#use_frameworks!
+
+plugin 'cocoapods-bin'
+
+tdfire_use_binary!
+tdfire_use_source_pods ['TDFNetworkEnvironmentSwitcher', 'TDFLoginAssistant']
+
+target '${POD_NAME}_Example' do
+  pod '${POD_NAME}', :path => '../'
+  
+:TRIPLECCREPLACEME
+
+  pod 'TDFNetworkEnvironmentSwitcher'
+  pod 'TDFHttpProxy'
+  pod 'TDFLoginAssistant/Login'
+  pod 'TDFBossBaseInfoDefaults'
+  pod 'TDFScreenDebugger'
+  pod 'TDFRequestsBuilder'
+  
+  target '${POD_NAME}_Tests' do
+    inherit! :search_paths
+
+    ${INCLUDED_PODS}
+  end
+end
+
+
+# 三方库设置 inhibit_warnings = true
+pre_install do |installer|
+  installer.analysis_result.specs_by_target.each_key do |target_definition|
+    installer.analysis_result.specifications.each do |spec|
+      source = spec.attributes_hash['source']
+      source &&= source['git']
+      next unless source && source.include?('cocoapods-repos')
+
+      targets = (Array(target_definition) + target_definition.children)
+      targets.each do |target|
+        target.set_inhibit_warnings_for_pod(spec.root.name, true)
+      end
+    end
+  end
+end

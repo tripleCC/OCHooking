@@ -1,0 +1,161 @@
+variables:
+  # 二进制优先
+  BINARY_FIRST: 1 
+  # 不允许通知 
+  DISABLE_NOTIFY: 0
+  # 业务线
+  # 目前有：
+  # YUN_CASH
+  #
+  # FIRE_TEAM: 
+
+before_script:
+  # https://gitlab.com/gitlab-org/gitlab-ce/issues/14983
+  # shared runner 会出现，special runner只会报warning
+  - export LANG=en_US.UTF-8
+  - export LANGUAGE=en_US:en
+  - export LC_ALL=en_US.UTF-8
+  
+  - pwd
+  - git clone git@git.2dfire.net:ios/ci-yaml-shell.git 
+  - ci-yaml-shell/before_shell_executor.sh
+
+after_script:
+  - rm -fr ci-yaml-shell
+
+stages:
+  - check
+  - lint
+  - test
+  - package
+  - binary_lint
+  - publish
+  - report
+  - cleanup
+
+component_check:
+  stage: check
+  script: 
+    - ci-yaml-shell/component_check_executor.rb
+  only:
+    - master
+    - /^release.*$/
+    - /^hotfix.*$/
+    - tags
+    - CI
+  tags:
+    - iOSCI
+  environment:
+    name: qa
+
+lib_lint:
+  stage: lint
+  only:
+    - master
+    - /^release.*$/
+    - /^hotfix.*$/
+    # - tags
+    - CI
+  retry: 0
+  script: 
+    - ci-yaml-shell/lib_lint_executor.sh
+  tags:
+    - iOSCI
+  environment:
+    name: qa
+# oc_lint:
+#   stage: lint
+#   only:
+#     - master
+#     # - /^release.*$/
+#     - CI
+#   retry: 0
+#   script: 
+#     - ci-yaml-shell/oclint_executor.sh lint_result
+#   after_script:
+#     - cat lint_result | python -m json.tool
+#   tags:
+#     - iOS
+
+# unit_test:
+#   stage: test
+#   only:
+#     - master
+#     # - /^release.*$/
+#     - CI
+#   retry: 1
+#   script: 
+#     - ci-yaml-shell/unit_test_executor.sh
+#   tags:
+#     - iOSCI
+#   environment:
+#     name: qa
+
+package_framework:
+  stage: package 
+  only:
+    - tags
+  script:
+    - ci-yaml-shell/framework_pack_executor.sh
+  tags:
+    - iOSCD
+  environment:
+    name: production
+
+# binary_lint:
+#   stage: binary_lint
+#   only:
+#     - tags
+#   retry: 1
+#   script:
+#     - ci-yaml-shell/binary_lint_executor.sh
+#   tags:
+#     - iOS
+
+publish_code_pod:
+  stage: publish
+  only:
+    - tags
+  retry: 0
+  script:
+    - ci-yaml-shell/publish_code_pod.sh
+  tags:
+    - iOSCD
+  environment:
+    name: production
+
+publish_binary_pod:
+  stage: publish
+  only:
+    - tags
+  retry: 0
+  script:
+    - ci-yaml-shell/publish_binary_pod.sh
+  tags:
+    - iOSCD
+  environment:
+    name: production
+
+
+  # allow_failure: true
+
+report_to_director:
+  stage: report
+  script:
+    - ci-yaml-shell/report_executor.sh
+  only:
+    - master
+    - tags
+  when: on_failure
+  tags:
+    - iOSCD
+
+# cleanup:
+#   only:
+#     - master
+#     - /^release.*$/
+#     - tags
+#   stage: cleanup
+#   script:
+#     - ci-yaml-shell/cleanup_executor.sh
+#   when: always
