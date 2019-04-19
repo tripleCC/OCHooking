@@ -11,11 +11,13 @@
 static void OCHSwizzleInstanceMethod(Class cls, SEL originalSelector, Method swizzledMethod) {
     IMP swizzledImp = method_getImplementation(swizzledMethod);
     const char *swizzledTypes = method_getTypeEncoding(swizzledMethod);
+    SEL swizzledSelector = method_getName(swizzledMethod);
     
+    Method originalMethod = class_getInstanceMethod(cls, originalSelector);
     BOOL didAddMethod = class_addMethod(cls, originalSelector, swizzledImp, swizzledTypes);
-    
-    if (!didAddMethod) {
-        Method originalMethod = class_getInstanceMethod(cls, originalSelector);
+    if (didAddMethod) {
+        class_replaceMethod(cls, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    } else {
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
