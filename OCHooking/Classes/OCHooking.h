@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)swizzleMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withSwizzledSelector:(SEL)swizzledSelector;
 + (void)swizzleClassMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withSwizzledSelector:(SEL)swizzledSelector;
 
-+ (NSInvocation *)swizzleMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withBlockMethod:(OCHBlockMethod * _Nonnull)blockMethod;
-+ (NSInvocation *)swizzleClassMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withBlockMethod:(OCHBlockMethod *)blockMethod;
++ (NSInvocation * _Nonnull)swizzleMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withBlockMethod:(OCHBlockMethod * _Nonnull)blockMethod;
++ (NSInvocation * _Nonnull)swizzleClassMethod:(SEL)originalSelector onClass:(_Nonnull Class)cls withBlockMethod:(OCHBlockMethod * _Nonnull)blockMethod;
 @end
 
 NS_ASSUME_NONNULL_END

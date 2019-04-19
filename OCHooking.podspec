@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'OCHooking'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
 
   # basic 基础组件 
   # weakbusiness 弱业务组件

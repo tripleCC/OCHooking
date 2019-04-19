@@ -38,6 +38,10 @@ static unsigned int count = 0;
     [self hooked_invoke];
     count++;
 }
+
+- (void)unknow_hooked_invoke {
+    count++;
+}
 @end
 
 @interface Tests : XCTestCase {
@@ -106,6 +110,18 @@ static unsigned int count = 0;
     [A c_invoke];
     
     XCTAssertTrue(count == 2);
+}
+
+- (void)testUnknowOriginalMethod {
+    SEL sel = NSSelectorFromString(@"unknow_invoke");
+    
+    XCTAssertThrows([OCHooking swizzleMethod:sel onClass:[A class] withBlockMethod:[OCHBlockMethod methodWithSelector:[OCHooking swizzledSelectorForSelector:@selector(unknow_hooked_invoke)] block:^ { }]]);
+    
+    XCTAssertThrows([OCHooking swizzleClassMethod:sel onClass:[A class] withBlockMethod:[OCHBlockMethod methodWithSelector:[OCHooking swizzledSelectorForSelector:@selector(unknow_hooked_invoke)] block:^ { }]]);
+    
+    XCTAssertThrows([OCHooking swizzleMethod:sel onClass:[A class] withSwizzledSelector:@selector(unknow_hooked_invoke)]);
+    
+    XCTAssertThrows([OCHooking swizzleClassMethod:sel onClass:[A class] withSwizzledSelector:@selector(hooked_invoke:)]);
 }
 
 - (void)testSignatureCompatible {
