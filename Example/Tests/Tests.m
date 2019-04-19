@@ -7,7 +7,7 @@
 //
 
 @import XCTest;
-@import OCHooking;
+#import <OCHooking/OCHooking.h>
 
 static unsigned int count = 0;
 
