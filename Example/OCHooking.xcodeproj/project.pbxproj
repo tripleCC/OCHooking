@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		0A41A5DD0BC3E653FF258028 /* libPods-OCHooking_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCHooking_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B8063EC47447E9EF3B0FCBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		5B8063EC47447E9EF3B0FCBA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* OCHooking_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCHooking_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,11 +61,11 @@
 		62477679CCEC3CC2FEB0E9AF /* Pods-OCHooking_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHooking_Tests.release.xcconfig"; path = "Target Support Files/Pods-OCHooking_Tests/Pods-OCHooking_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		98EB45749EB2A1A84B367690 /* OCHooking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = OCHooking.podspec; path = ../OCHooking.podspec; sourceTree = "<group>"; };
+		98EB45749EB2A1A84B367690 /* OCHooking.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OCHooking.podspec; path = ../OCHooking.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A90DA8FD2BB688F5E5D708A3 /* Pods-OCHooking_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHooking_Example.release.xcconfig"; path = "Target Support Files/Pods-OCHooking_Example/Pods-OCHooking_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C76043F8E9F5E724D281D9FF /* Pods-OCHooking_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHooking_Tests.debug.xcconfig"; path = "Target Support Files/Pods-OCHooking_Tests/Pods-OCHooking_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8AD54FB8C22B3C589B171BF /* libPods-OCHooking_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OCHooking_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF8608E139958A31A5094DB8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CF8608E139958A31A5094DB8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		E4DA80B786EE8CC17183932C /* Pods-OCHooking_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCHooking_Example.debug.xcconfig"; path = "Target Support Files/Pods-OCHooking_Example/Pods-OCHooking_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,7 +193,6 @@
 				C76043F8E9F5E724D281D9FF /* Pods-OCHooking_Tests.debug.xcconfig */,
 				62477679CCEC3CC2FEB0E9AF /* Pods-OCHooking_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +207,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				9F6785D9E08709AFB3EFB3F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,111 +313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9F6785D9E08709AFB3EFB3F6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-OCHooking_Example/Pods-OCHooking_Example-resources.sh",
-				"${PODS_ROOT}/OCTWebViewBridge/OCTWebViewBridge.framework/Versions/A/Resources/OCTWebViewBridge.bundle",
-				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc.framework/Versions/A/Resources/unicode_to_hanyu_pinyin.txt",
-				"${PODS_ROOT}/TDFCore/TDFCore.framework/Versions/A/Resources/Media.xcassets",
-				"${PODS_ROOT}/TDFFooterKit/TDFFooterKit.framework/Versions/A/Resources/Media.xcassets",
-				"${PODS_ROOT}/TDFHttpProxy/TDFHttpProxy.framework/Versions/A/Resources/TDFHttpProxy.bundle",
-				"${PODS_ROOT}/TDFMediatorKit/TDFMediatorKit.framework/Versions/A/Resources/TDFSupplyChainJumpValue.plist",
-				"${PODS_ROOT}/TDFNavigationBarKit/TDFNavigationBarKit.framework/Versions/A/Resources/Media.xcassets",
-				"${PODS_ROOT}/TDFThemeKit/TDFThemeKit.framework/Versions/A/Resources/TDFHomeTheme.plist",
-				"${PODS_ROOT}/TDFThemeKit/TDFThemeKit.framework/Versions/A/Resources/Media.xcassets",
-				"${PODS_ROOT}/TDFWebViewKit/TDFWebViewKit.framework/Versions/A/Resources/nav.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/access_token.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/appversion.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/customerservice.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/executor.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/image.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/mobclick.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/navigation.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/recommendshare.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/route_webview.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/share.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/uploadcontacts.js",
-				"${PODS_ROOT}/TDFWebViewPlugins/TDFWebViewPlugins.framework/Versions/A/Resources/Assets.xcassets",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/ar.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/Base.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/da.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/de.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/en.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/es.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/fr.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/id.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/it.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/ja.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/ko.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/Media.xcassets",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/ms.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/nl.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/pl.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/pt.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/ru.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/tr.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/vi.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/zh-Hans.lproj",
-				"${PODS_ROOT}/TOCropViewController/TOCropViewController.framework/Versions/A/Resources/zh-Hant.lproj",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/OCTWebViewBridge.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Assets.car",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TDFHttpProxy.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TDFSupplyChainJumpValue.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TDFHomeTheme.plist",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nav.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/access_token.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/appversion.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/customerservice.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/executor.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/image.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mobclick.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/navigation.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/recommendshare.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/route_webview.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/share.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/uploadcontacts.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ar.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Base.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/da.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/de.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/es.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/id.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/it.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ja.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ko.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ms.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pl.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ru.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/tr.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vi.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hant.lproj",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCHooking_Example/Pods-OCHooking_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BC0C992B4EB1BD4C02AC7B47 /* [CP] Check Pods Manifest.lock */ = {

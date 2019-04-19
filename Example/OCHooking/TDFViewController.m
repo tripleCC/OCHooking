@@ -5,7 +5,6 @@
 //  Created by tripleCC on 04/18/2019.
 //  Copyright (c) 2019 tripleCC. All rights reserved.
 //
-
 #import "TDFViewController.h"
 
 @interface TDFViewController ()
@@ -17,7 +16,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
 }
 
 - (void)didReceiveMemoryWarning

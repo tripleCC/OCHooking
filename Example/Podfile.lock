@@ -1,0 +1,16 @@
+PODS:
+  - OCHooking (0.1.0)
+
+DEPENDENCIES:
+  - OCHooking (from `../`)
+
+EXTERNAL SOURCES:
+  OCHooking:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  OCHooking: 5d60877aff5aaf916ae1abbe88707f98efbd68fc
+
+PODFILE CHECKSUM: 9146746c9b44becbd943b55b9b7154578ec35aee
+
+COCOAPODS: 1.6.1
