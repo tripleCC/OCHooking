@@ -77,19 +77,19 @@ lib_lint:
 #   tags:
 #     - iOS
 
-# unit_test:
-#   stage: test
-#   only:
-#     - master
-#     # - /^release.*$/
-#     - CI
-#   retry: 1
-#   script: 
-#     - ci-yaml-shell/unit_test_executor.sh
-#   tags:
-#     - iOSCI
-#   environment:
-#     name: qa
+unit_test:
+  stage: test
+  only:
+    - master
+    # - /^release.*$/
+    - CI
+  retry: 1
+  script: 
+    - ci-yaml-shell/unit_test_executor.sh
+  tags:
+    - iOSCI
+  environment:
+    name: qa
 
 package_framework:
   stage: package 
