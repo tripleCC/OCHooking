@@ -10,11 +10,7 @@ Pod::Spec.new do |s|
   s.name             = 'OCHooking'
   s.version          = '0.1.1'
 
-  # basic 基础组件 
-  # weakbusiness 弱业务组件
-  # business 业务组件
-  
-  s.summary          = 'business A short description of OCHooking.'
+  s.summary          = 'swizzle method with block.'
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -23,24 +19,15 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+OCHooking swizzle method with block.
                        DESC
 
-  s.homepage         = 'http://git.2dfire.net/ios/OCHooking'
+  s.homepage         = 'https://github.com/tripleCC/OCHooking'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tripleCC' => 'triplec.linux@gmail.com' }
-  s.source           = { :git => 'http://git.2dfire.net/ios/OCHooking.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/tripleCC/OCHooking.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   
   s.source_files = 'OCHooking/Classes/**/*'
   s.public_header_files = 'OCHooking/Classes/**/*.{h}'
-  # s.private_header_files = 
-
-  # 资源依赖必须使用 bundle
-  # s.resource_bundles = {
-  #     'OCHooking' => ['OCHooking/Assets/*']
-  # }
-  # ['OCHooking/Assets/*.{xcassets}']
-
-  # s.dependency 'TDFModuleKit'
 end

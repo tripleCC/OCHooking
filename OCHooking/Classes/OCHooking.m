@@ -36,8 +36,9 @@ static void OCHSwizzleInstanceMethod(Class cls, SEL originalSelector, Method swi
     NSAssert(swizzledMethod, @"Swizzled method should not be nil");
     
     if (originalMethod && swizzledMethod) {
-        const char *originalEncoding = method_getTypeEncoding(originalMethod);
-        const char *swizzledEncoding = method_getTypeEncoding(swizzledMethod);
+        // fix pod lib lint [-Wunused-variable] warning
+        __unused const char *originalEncoding = method_getTypeEncoding(originalMethod);
+        __unused const char *swizzledEncoding = method_getTypeEncoding(swizzledMethod);
         NSAssert(!strcmp(originalEncoding, swizzledEncoding), @"Swizzled method type encoding should equal to original method type encoding");
     }
     

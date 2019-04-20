@@ -1,7 +1,6 @@
 # OCHooking
 
-![CI Status](http://git.2dfire.net/ios/OCHooking/pipelines)
-![Version](http://git.2dfire.net/ios/cocoapods-spec/tree/master/OCHooking)
+[![Build Status](https://travis-ci.com/tripleCC/OCHooking.svg?token=eaWJpsbpao188zYdc2p7&branch=master)](https://travis-ci.com/tripleCC/OCHooking)
 [![License](https://img.shields.io/cocoapods/l/OCHooking.svg?style=flat)](http://cocoapods.org/pods/OCHooking)
 [![Platform](https://img.shields.io/cocoapods/p/OCHooking.svg?style=flat)](http://cocoapods.org/pods/OCHooking)
 
